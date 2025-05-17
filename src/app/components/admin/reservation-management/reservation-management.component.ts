@@ -3,7 +3,7 @@ import { ReservationService } from '../../../services/reservation.service';
 import { Reservation } from '../../../models/reservation';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-//test
+
 @Component({
   selector: 'app-reservation-management',
   standalone: true,
