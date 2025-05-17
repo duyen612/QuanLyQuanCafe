@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "dien",
+      "email": "ltmd@gmail.com",
+      "password": "12345a"
+    },
+    {
+      "id": "2",
+      "username": "dyn",
+      "email": "dyn@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "7c50",
+      "username": "duyen",
+      "email": "duyen@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "3745",
+      "username": "duyen1",
+      "email": "duyen@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "0410",
+      "username": "tram",
+      "email": "tram@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "e949",
+      "username": "admin2",
+      "email": "tram1@gmail.com",
+      "password": "abc"
+    },
+    {
+      "id": "cc33",
+      "username": "trn",
+      "email": "tr@gmail.com",
+      "password": "abc123"
+    },
+    {
+      "id": "212f",
+      "username": "admin",
+      "password": "123456",
+      "fullName": "Nguyễn Văn A",
+      "email": "ltmd12@gmail.com",
+      "phone": "0123456789",
+      "role": "staff",
+      "startDate": "2023-01-01"
+    },
+    {
+      "id": "1234",
+      "username": "trm",
+      "password": "abc123",
+      "fullName": "Hoai",
+      "email": "trm@gmail.com",
+      "phone": "0912345678",
+      "role": "staff",
+      "startDate": "2025-04-01"
+    }
+  ]
+}

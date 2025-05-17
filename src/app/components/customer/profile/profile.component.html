@@ -1,0 +1,36 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmitPersonalInfo()" class="form-container">
+  <h2 class="form-heading">Thông tin cá nhân</h2>
+  
+  <label class="form-label">
+    Họ và tên:
+    <input formControlName="fullName" class="form-input" />
+  </label>
+  
+  <label class="form-label">
+    Email:
+    <input formControlName="email" type="email" class="form-input" />
+  </label>
+  
+  <label class="form-label">
+    Số điện thoại:
+    <input formControlName="phone" type="tel" class="form-input" />
+  </label>
+  
+  <label class="form-label">
+    Vai trò:
+    <select formControlName="role" class="form-input">
+      <option value="manager">Quản lý</option>
+      <option value="staff">Nhân viên</option>
+      <option value="owner">Chủ quán</option>
+    </select>
+  </label>
+  
+  <label class="form-label">
+    Ngày bắt đầu làm việc:
+    <input formControlName="startDate" type="date" class="form-input" />
+  </label>
+  
+  <button type="submit" class="form-button">
+    Lưu thông tin 
+  </button>
+</form>

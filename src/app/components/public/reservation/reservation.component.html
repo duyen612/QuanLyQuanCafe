@@ -1,0 +1,44 @@
+<div class="form-container">
+  <h2 class="form-heading">Đặt Bàn</h2>
+  <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="reservation-form">
+    
+    <ng-container *ngIf="!isLoggedIn">
+      <label class="form-label">
+        Họ và tên:
+        <input formControlName="name" type="text" class="form-input" />
+      </label>
+
+      <label class="form-label">
+        Email:
+        <input formControlName="email" type="email" class="form-input" />
+      </label>
+
+      <label class="form-label">
+        Số điện thoại:
+        <input formControlName="phone" type="tel" class="form-input" />
+      </label>
+    </ng-container>
+
+    <label class="form-label">
+      Ngày đặt:
+      <input formControlName="reservationDate" type="date" class="form-input" />
+    </label>
+
+    <label class="form-label">
+      Giờ đặt:
+      <select formControlName="timeSlot" class="form-input">
+        <option value="9:00">9:00 AM</option>
+        <option value="12:00">12:00 PM</option>
+        <option value="15:00">3:00 PM</option>
+        <option value="18:00">6:00 PM</option>
+      </select>
+    </label>
+
+    <label class="form-label">
+      Số lượng khách:
+      <input formControlName="guests" type="number" class="form-input" />
+    </label>
+
+    <button type="submit" [disabled]="!reservationForm.valid" class="form-button">Đặt bàn</button>
+  </form>
+</div>
