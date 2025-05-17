@@ -23,6 +23,10 @@ export const routes: Routes = [
       loadComponent: () =>
         import('./components/public/reservation/reservation.component').then(m => m.ReservationFormComponent)
     },
+    { path: 'reservation-management', 
+      loadComponent: () =>
+        import('./components/admin/reservation-management/reservation-management.component').then(m => m.ReservationManagementComponent)
+    },
     { path: 'change-password', 
       loadComponent: () =>
         import('./components/auth/change-password/change-password.component').then(m => m.ChangePasswordComponent)

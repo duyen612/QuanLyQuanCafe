@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service'; 
 import { ReservationService } from '../../../services/reservation.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation-form',
@@ -17,7 +18,7 @@ export class ReservationFormComponent implements OnInit {
   isLoggedIn = false;
   userId: number | null = null;
 
-  constructor(
+  constructor(public router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
     private reservationService: ReservationService
@@ -47,10 +48,21 @@ export class ReservationFormComponent implements OnInit {
         reservationData.userId = this.userId;
       }
 
-      console.log('Dữ liệu gửi đi:', reservationData);
-      this.reservationService.createReservation(reservationData).subscribe(response => {
-        console.log('Đặt bàn thành công:', response);
+      this.reservationService.createReservation(reservationData).subscribe({
+        next: (response) => {
+          alert('Đặt bàn thành công!');  // Hiển thị thông báo
+          this.router.navigate(['/home']);   // Chuyển về trang chủ, thay '/' bằng đường dẫn trang chủ thực tế của bạn
+        },
+        error: (err) => {
+          alert('Đặt bàn thất bại, vui lòng thử lại.');
+          console.error(err);
+        }
       });
     }
   }
+  goToHistory(): void {
+    this.router.navigate(['/reservation-management']);
+  }
+
+  
 }

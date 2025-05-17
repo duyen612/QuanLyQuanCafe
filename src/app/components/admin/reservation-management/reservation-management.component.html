@@ -1,1 +1,51 @@
-<p>reservation-management works!</p>
+<div class="container">
+  <h2 class="title">{{ isAdmin ? 'Quản lý đặt bàn' : 'Lịch sử đặt bàn' }}</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <table class="reservation-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Khách hàng</th>
+        <th>Ngày</th>
+        <th>Giờ</th>
+        <th>Số người</th>
+        <th>Trạng thái</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <!-- Nếu có userId (kiểu đầy đủ) -->
+        <ng-container *ngIf="reservation.userId">
+            <td>{{ reservation.id }}</td>
+            <td>{{ reservation.fullName }}</td>
+            <td>{{ reservation.reservationTime | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ reservation.reservationTime | date: 'HH:mm' }}</td>
+            <td>{{ reservation.numberOfGuests }}</td>
+            <td>{{ reservation.status }}</td>
+            <td>
+            <button *ngIf="isAdmin && reservation.status !== 'confirmed'" 
+                    (click)="confirmReservation(reservation.id!)" 
+                    class="action-btn confirm-btn">
+                Xác nhận
+            </button>
+            <button (click)="cancelReservation(reservation.id!)" 
+                    class="action-btn cancel-btn">
+                Hủy
+            </button>
+            </td>
+        </ng-container>
+
+        </tr>
+
+    </tbody>
+  </table>
+
+  <div *ngIf="reservations.length === 0" class="no-data">
+    Không có đặt bàn nào.
+  </div>
+</div>

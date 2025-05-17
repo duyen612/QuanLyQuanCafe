@@ -7,15 +7,14 @@ import { Reservation } from '../models/reservation';
   providedIn: 'root'
 })
 export class ReservationService {
-  private apiUrl = 'https://localhost:5001/api/reservations'; // Đổi thành URL thực tế backend
+  private apiUrl = 'http://localhost:3000/reservations'; // Đổi thành URL thực tế backend
 
   constructor(private http: HttpClient) {}
 
   // Tạo mới một đặt bàn
-  createReservation(reservation: Reservation): Observable<Reservation> {
-    return this.http.post<Reservation>(this.apiUrl, reservation);
+  createReservation(data: any): Observable<any> {
+    return this.http.post<any>('http://localhost:3000/reservations', data);
   }
-
   // Lấy danh sách tất cả đặt bàn (cho admin)
   getAllReservations(): Observable<Reservation[]> {
     return this.http.get<Reservation[]>(this.apiUrl);
@@ -23,7 +22,7 @@ export class ReservationService {
 
   // Lấy danh sách đặt bàn theo userId
   getReservationsByUser(userId: number): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(`${this.apiUrl}/user/${userId}`);
+    return this.http.get<Reservation[]>(`${this.apiUrl}?userId=${userId}`);
   }
 
   // Lấy chi tiết một đặt bàn

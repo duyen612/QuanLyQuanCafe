@@ -45,10 +45,16 @@ export class ProfileFormComponent implements OnInit {
   }
 
   onSubmitPersonalInfo(): void {
-    console.log('Gửi form');
     if (this.profileForm.valid) {
-      const profileData = this.profileForm.value;
-      console.log('Form hợp lệ, userId:', this.userId, 'Dữ liệu gửi:', profileData);
+      const profileData = {
+        ...this.profileForm.value,
+        startDate: new Date(this.profileForm.value.startDate).toISOString().split('T')[0],
+        username: localStorage.getItem('username') || ''
+      };
+      if (!this.userId) {
+        alert('Không tìm thấy userId, vui lòng đăng nhập lại.');
+        return;
+      }
 
       this.http.put(`${this.apiUrl}/${this.userId}`, {
       ...profileData,

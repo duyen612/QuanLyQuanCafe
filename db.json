@@ -62,5 +62,52 @@
       "role": "staff",
       "startDate": "2025-04-01"
     }
+  ],
+  "reservations": [
+    {
+      "id": "e614",
+      "name": "duyen",
+      "email": "duyen@gmail.com",
+      "phone": "0912345678",
+      "reservationDate": "2025-05-24",
+      "timeSlot": "9:00",
+      "guests": 2
+    },
+    {
+      "id": "24d4",
+      "name": "tram",
+      "email": "tram@gmail.com",
+      "phone": "0912345555",
+      "reservationDate": "2025-05-10",
+      "timeSlot": "9:00",
+      "guests": 6
+    },
+    {
+      "id": "9ada",
+      "name": "tram",
+      "email": "tram@gmail.com",
+      "phone": "0912345555",
+      "reservationDate": "2025-05-10",
+      "timeSlot": "9:00",
+      "guests": 6
+    },
+    {
+      "id": "9bb8",
+      "name": "tram",
+      "email": "tram@gmail.com",
+      "phone": "0912345555",
+      "reservationDate": "2025-05-10",
+      "timeSlot": "9:00",
+      "guests": 6
+    },
+    {
+      "id": "77f3",
+      "name": "tram",
+      "email": "tram@gmail.com",
+      "phone": "0912345555",
+      "reservationDate": "2025-05-10",
+      "timeSlot": "9:00",
+      "guests": 6
+    }
   ]
 }
